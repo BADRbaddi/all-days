@@ -1,26 +1,17 @@
-#include<unistd.h>
 #include<stdio.h>
 
-int    ft_fibonacci(int index)
+int	ft_recursive_power(int nb, int power)
 {
-    int    res;
-
-    res = 0;
-    if (index < 0)
-        return (-1);
-    else if (index < 2)
-        return (index);
-    res = ft_fibonacci(index - 1) + ft_fibonacci(index - 2);
-    return (res);
+	if (power == 0)
+		return (1);
+	else if (power < 0)
+		return (0);
+	return (nb * ft_recursive_power(nb, power - 1));
 }
 /*int main()
 {
-    int a = 5;
-    int i = 0;
-    
-    while(i <= a)
-    {
-        printf("fibonacci(%d) = %d\n", i, ft_fibonacci(i));
-        i++;
-    }
+    int nbr = 5;
+    int power = 4;
+
+    printf("%d", ft_recursive_power(nbr, power));
 }*/
